@@ -3,7 +3,6 @@
 ###Colors
 1. colored manpages
 2. colored outputs for many programs, like gcc, vim, etc.
-3. many more...
 
 ###Aliases
 1. Aliases for pacman
