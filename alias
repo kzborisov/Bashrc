@@ -23,6 +23,7 @@ alias egrep='egrep --color=auto'
 alias ..='cd ..'
 alias ....='cd ../..'
 alias ......='cd ../../..'
+alias home='cd /home/kborisov/'
 alias df='df -h'
 alias diff='colordiff'              # requires colordiff package
 alias du='du -c -h'
@@ -33,9 +34,6 @@ alias mkdir='mkdir -p -v'
 alias more='less'
 alias nano='nano -w'
 alias ping='ping -c 5'
-alias c='clear && clear'
-alias .bashrc="vim ~/.bashrc"
-alias exho='echo'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -iv'
@@ -43,13 +41,14 @@ alias mkdir='mkdir -p'
 alias ps='ps auxf'
 alias ping='ping -c 10'
 alias less='less -R'
-alias cls='clear'
-alias apt-get='sudo apt-get'
+alias cls='clear && clear'
 alias multitail='multitail --no-repeat -c'
 alias freshclam='sudo freshclam'
 alias vi='vim'
+alias sb='sublime-text'
 alias svi='sudo vi'
 alias vis='vim "+set si"'
+alias bashrc='source ~/.bashrc'
 #}}}
 
 
@@ -99,7 +98,6 @@ fi
 alias ls='ls -hF --color=auto'
 alias l='ls -hF --color=auto'
 alias ll='ls -alhF'
-alias la='ls -Alh'                  # show hidden files
 alias ls='ls -aFh --color=always'   # add colors and file type extensions
 alias lx='ls -lXBh'                 # sort by extension
 alias lk='ls -lSrh'                 # sort by size
@@ -127,7 +125,7 @@ alias upgrade='sudo apt-get upgrade'
 
 #alias for activating env1
 #python virtualenv alias {{{
-alias venv='source ~/env1/bin/activate'
+alias venv='source ~/env/bin/activate'
 alias notes='vim ~/notes.txt'
 alias speedtest=~/speedtest
 alias utime='sudo ntpdate pool.ntp.org'
@@ -176,3 +174,8 @@ alias countfiles="for t in files links directories; do echo \`find . -type \${t:
 # To see if a command is aliased, a file, or a built-in command {{{
 alias checkcommand="type -t"
 #}}}
+##
+#
+# SSH TO LELY PI:
+alias lelyroot="ssh root@192.168.100.50"
+alias lely="ssh lely@192.168.100.50"
