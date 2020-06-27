@@ -1,10 +1,9 @@
-# Something cool to get you pumped-up :)
-fortune | cowsay
-
 #######################################################
 # Set the ultimate amazing command prompt
 #######################################################
-
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
 alias cpu="grep 'cpu ' /proc/stat | awk '{usage=(\$2+\$4)*100/(\$2+\$4+\$5)} END {print usage}' | awk '{printf(\"%.1f\n\", \$1)}'"
 function __setprompt
 {
@@ -75,15 +74,10 @@ function __setprompt
   PS1+="\[${DARKGRAY}\](\[${CYAN}\]\$(date +%a) $(date +%b-'%-m')" # Date
   PS1+="${BLUE} $(date +'%-I':%M:%S%P)\[${DARKGRAY}\])-" # Time
 
-  # CPU
-  PS1+="(\[${MAGENTA}\]CPU $(cpu)%"
+  # GIT
+  PS1+="(\[${MAGENTA}\]$(parse_git_branch)"
 
   # Jobs
-  PS1+="\[${DARKGRAY}\]:\[${MAGENTA}\]\j"
-
-  # Network Connections (for a server - comment out for non-server)
-  PS1+="\[${DARKGRAY}\]:\[${MAGENTA}\]Net $(awk 'END {print NR}' /proc/net/tcp)"
-
   PS1+="\[${DARKGRAY}\])-"
 
   # User and server
