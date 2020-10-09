@@ -119,13 +119,15 @@ alias rmd='/bin/rm  --recursive --force --verbose '
 # APT_GET {{{
 alias install='sudo apt-get install'
 alias remove='sudo apt-get remove'
-alias update='sudo apt-get update'
-alias upgrade='sudo apt-get upgrade'
+alias update='sudo apt-get update -y'
+alias upgrade='sudo apt-get upgrade -y'
+alias autoremove='sudo apt-get autoremove -y'
+alias autopurge='sudo apt-get autopurge -y'
 #}}}
 
 #alias for activating env1
 #python virtualenv alias {{{
-alias python='python3'
+alias python='/usr/bin/python3'
 alias venv='source ~/env/bin/activate'
 alias notes='vim ~/notes.txt'
 alias speedtest=~/speedtest
@@ -182,4 +184,4 @@ alias lelyRoot="ssh root@192.168.100.50"
 alias lely="ssh lely@192.168.100.50"
 
 # ZAHO's ALIASES
-alias tmux3="tmux new-session \; split-window -v \; split-window -h \;"
+alias tmux3="tmux new-session \; split-window -h \; split-window -v \;"

@@ -695,3 +695,4 @@ function whatsmyip ()
 	# External IP Lookup
 	echo -n "External IP: " ; wget http://smart-ip.net/myip -O - -q
 }
+
